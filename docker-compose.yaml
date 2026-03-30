@@ -9,6 +9,12 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:ro
     networks:
       - lab
+  backend:
+    build: ./backend
+    expose:
+      - "8080"
+    networks:
+      - lab
 
 networks:
   lab:

@@ -7,7 +7,7 @@ import (
 )
 
 func api(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, "this is the backend")
+	c.JSON(http.StatusOK, "this is the backend")
 }
 
 func main() {
