@@ -1,0 +1,27 @@
+services:
+  proxy:
+    image: nginx:latest
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - lab
+  backend:
+    build: ./backend
+    expose:
+      - "8080"
+    networks:
+      - lab
+  frontend:
+    build: ./frontend
+    expose:
+      - "3000"
+    networks:
+      - lab
+
+networks:
+  lab:
+    driver: bridge
