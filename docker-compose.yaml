@@ -21,18 +21,18 @@ services:
       - "3000"
     networks:
       - lab
-  db:
-    image: postgres:18
-    environment:
-      POSTGRES_DB: joat
-      POSTGRES_USER: joat
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - /root/postgres_data:/var/lib/postgresql
-    expose:
-      - "5432"
-    networks:
-      - lab 
+  #db:
+  #  image: postgres:18
+  #  environment:
+  #    POSTGRES_DB: joat
+  #    POSTGRES_USER: joat
+  #    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #  volumes:
+  #    - /root/postgres_data:/var/lib/postgresql
+  #  expose:
+  #    - "5432"
+  #  networks:
+  #    - lab 
 
 networks:
   lab:
